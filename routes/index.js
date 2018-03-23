@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 const MongoClient = require('mongodb').MongoClient;
+const Citation = require('../citations/Citation');
 
 (async function() {
  const url = 'mongodb://localhost:27017/EndFormationProject';
@@ -29,11 +30,6 @@ mongoose.connect('mongodb://localhost/blog', function(err) {
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  var QuoteSchema = new mongoose.Schema({
-    author: String,
-    quote: String
-  });
-var Citation = mongoose.model('Citation', QuoteSchema);
 Citation.count().exec(function (err, count) {
 
   // Get a random entry

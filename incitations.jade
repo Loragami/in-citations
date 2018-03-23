@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  p Dare Awesome!
+  button(onclick='something()') Previous
+
+  button(onclick='something()', id='clickme') Click Me!
+
+  button(onclick='something()') Next
+
+  form(action='/citations', method="post")
+    input(type='text', placeholder='auteur', name='author')
+    input(type='text', placeholder='citation', name='quote')
+    input(type='submit')
+
+  .content
+    blockquote
+      p Citation - auteur
+
+
+  <input name="tweet" id="tweet" value="twitter" type="submit" />
+  <input name="like" id="like" value="Liker" type="submit" />

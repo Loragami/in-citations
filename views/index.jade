@@ -4,5 +4,12 @@ block content
   h1= title
   p Welcome to #{title}
 
-  p Dare Awesome!
-  button(onclick='something()') Click Me
+  form(action='/citations', method="post")
+    input(type='text', placeholder='auteur', name='author')
+    input(type='text', placeholder='citation', name='quote')
+    input(type='submit', class='click me!')
+
+  #{quotes}
+  <input type="button" onclick='window.location.reload(false)' value="Rafraichir"/>
+
+  p Citation - auteur

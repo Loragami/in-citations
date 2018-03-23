@@ -30,8 +30,8 @@ mongoose.connect('mongodb://localhost/blog', function(err) {
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-Citation.count().exec(function (err, count) {
 
+Citation.count().exec(function (err, count) {
   // Get a random entry
   var random = Math.floor(Math.random() * count)
 
